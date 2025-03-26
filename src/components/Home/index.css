@@ -1,0 +1,34 @@
+h1{
+  color: white;
+}
+p{
+  color: white;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  background-size: cover;
+  min-height: 100vh;
+}
+.find-job-btn {
+  color: white;
+  background-color: blue;
+  padding: 5px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+.home-heading {
+  color: white;
+  font-weight: bold;
+}
+.home-description {
+  color: white;
+  font-size: 24px;
+}
+.home-card {
+  padding: 40px;
+  width: 45%;
+}

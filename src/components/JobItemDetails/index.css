@@ -1,0 +1,121 @@
+.bg-container-detial {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+}
+.detail-card {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: cadetblue;
+  padding: 10px;
+  margin: 10px;
+}
+.detail-card-title-section {
+  display: flex;
+  align-items: center;
+}
+.detail-card-title-section img {
+  height: 80px;
+  width: 80px;
+}
+.title {
+  color: white;
+  font-size: 15px;
+}
+.rating {
+  color: white;
+}
+.location-info {
+  display: flex;
+  justify-content: space-between;
+}
+.location-info p {
+  color: white;
+  margin-right: 0.2cm;
+}
+.location-info-right {
+  display: flex;
+  align-items: center;
+}
+.description-link-card-section {
+  display: flex;
+  justify-content: space-between;
+}
+.link-btn {
+  border: none;
+  background-color: transparent;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills-container li {
+  margin-right: 3cm;
+  margin-bottom: 0.3cm;
+}
+.skills-info {
+  display: flex;
+  align-items: center;
+}
+.skills-info img {
+  height: 40px;
+  width: 40px;
+}
+.skills-info h1 {
+  font-size: 20px;
+}
+.life-company-container {
+  display: flex;
+  justify-content: space-between;
+}
+.similar-job-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.similar-card {
+  background-color: black;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid red;
+}
+.similar-card p {
+  color: white;
+}
+.similar-title-section {
+  display: flex;
+  align-items: center;
+}
+.similar-title-section img {
+  width: 80px;
+  height: 80px;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.failure-img {
+  width: 30%;
+}
+.retry-btn {
+  background-color: blue;
+  color: white;
+  padding: 5px 30px;
+  font-weight: bold;
+}
