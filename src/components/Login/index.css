@@ -14,9 +14,10 @@
   display: flex;
   flex-direction: column;
 }
-label {
+.form-container label {
   color: white;
-  font-size: 10px;
+  font-size: 14px;
+  margin-top: 10px;
 }
 .err-msg {
   color: red;
@@ -25,9 +26,27 @@ label {
 .login-btn {
   margin-top: 0.2cm;
   align-self: center;
+  border: none;
+  outline: none;
+  background-color: rgb(202, 170, 12);
+  color: white;
+  padding: 6px 39px;
+  font-size: 15px;
+  border-radius: 12px;
 }
 .form-website-logo {
   width: 120px;
   align-self: center;
   margin: 0.2cm;
+}
+
+.form-container input{
+  height: 40px;
+  font-size: 15px;
+  border-radius: 10px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  padding: 0 12px;
+  margin: 5px 0 10px 0;
 }
