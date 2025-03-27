@@ -3,14 +3,14 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   background-color: black;
-
   min-height: 100vh;
   padding: 10px;
-  border: 20px;
+  position: relative;
 }
 .Filter-profile-container {
   display: flex;
   flex-direction: column;
+  position: sticky;
 }
 .profile-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
@@ -51,7 +51,13 @@ hr {
   width: 80%;
   border: 1px solid #ddd;
 }
-input {
+.search-input-container button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+input[type='search'] {
   outline: none;
   width: 80%;
   background-color: black;

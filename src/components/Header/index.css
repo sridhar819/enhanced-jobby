@@ -7,6 +7,8 @@
   justify-content: space-around;
   align-items: center;
   list-style-type: none;
+  position: sticky;
+  top: 0;
 }
 .website-logo {
   width: 100px;

@@ -45,6 +45,14 @@ const salaryRangesList = [
   },
 ]
 
+const locationList = [
+  {id: 'Hyderabad', label: 'Hyderabad'},
+  {id: 'Bangalore', label: 'Bangalore'},
+  {id: 'Chennai', label: 'Chennai'},
+  {id: 'Delhi', label: 'Delhi'},
+  {id: 'Mumbai', label: 'Mumbai'},
+]
+
 const apiStatusConstant = {
   success: 'success',
   failure: 'failure',
@@ -61,6 +69,7 @@ class Jobs extends Component {
   state = {
     profileData: {},
     employmentType: [],
+    selectedLocation: [],
     lpaRange: '',
     searchInput: '',
     jobDataList: [],
@@ -71,6 +80,30 @@ class Jobs extends Component {
   componentDidMount() {
     this.profileFetchApiData()
     this.jobFetchData()
+  }
+
+  onChangeEmployment = event => {
+    const {id, checked} = event.target
+    this.setState(
+      preState => ({
+        employmentType: checked
+          ? [...preState.employmentType, id]
+          : preState.employmentType.filter(each => each !== id),
+      }),
+      this.jobFetchData,
+    )
+  }
+
+  onChangeLocation = event => {
+    const {id, checked} = event.target
+    this.setState(
+      preState => ({
+        selectedLocation: checked
+          ? [...preState.selectedLocation, id]
+          : preState.selectedLocation.filter(each => each !== id),
+      }),
+      this.jobFetchData,
+    )
   }
 
   profileFetchApiData = async () => {
@@ -146,18 +179,6 @@ class Jobs extends Component {
     )
   }
 
-  onChangeEmployment = event => {
-    const {id, checked} = event.target
-    this.setState(
-      preState => ({
-        employmentType: checked
-          ? [...preState.employmentType, id]
-          : preState.employmentType.filter(each => each !== id),
-      }),
-      this.jobFetchData,
-    )
-  }
-
   onChangeUpdateLpa = event => {
     this.setState({lpaRange: event.target.value}, this.jobFetchData)
   }
@@ -196,6 +217,20 @@ class Jobs extends Component {
           </li>
         ))}
       </ul>
+      <hr />
+      <h1 className="filter-heading">ChooseLocation</h1>
+      <ul className="emploment-option-container">
+        {locationList.map(each => (
+          <li key={each.id}>
+            <input
+              onChange={this.onChangeLocation}
+              id={each.id}
+              type="checkbox"
+            />
+            <label htmlFor={each.id}>{each.label}</label>
+          </li>
+        ))}
+      </ul>
     </>
   )
 
@@ -208,10 +243,15 @@ class Jobs extends Component {
   }
 
   renderJobData = () => {
-    const {jobDataList} = this.state
-    return jobDataList.length > 0 ? (
+    const {jobDataList, selectedLocation} = this.state
+    const locationBasedFilteredList =
+      selectedLocation.length === 0
+        ? jobDataList
+        : jobDataList.filter(each => selectedLocation.includes(each.location))
+
+    return locationBasedFilteredList.length > 0 ? (
       <ul>
-        {jobDataList.map(each => (
+        {locationBasedFilteredList.map(each => (
           <JobItem key={each.id} jobDataItem={each} />
         ))}
       </ul>
